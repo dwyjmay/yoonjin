@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+
+img{max-width: 100%;}
+
+
+
+/* 탭메뉴 디자인*/
+.tabTypeA {font-size:0; background:-webkit-gradient(linear, 0 30%, 0 bottom, from(#f5cd00), to(#f0aa01));}
+.tabTypeA li{display: inline-block;}
+.tabTypeA li a{display: block; padding:10px 0; font-size: 14px; text-align: center; font-weight: 600;}
+.tabTypeA li.on a{background: url(/m/tabMenu/images/bg_tab.gif) left top no-repeat, url(/m/tabMenu/images/bg_tab.gif) bottom right no-repeat; background-size: 512px;}
+
+/*탭메뉴 너비 설정*/
+.tabNum2 li{width: 50%;}
+.tabNum3 li{width: 33.3%;}
+.tabNum4 li{width: 25%;}
+.tabNum5 li{width: 20%;}
+.tabNum6 li{width: 16.6%;}
