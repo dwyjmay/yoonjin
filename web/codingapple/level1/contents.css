@@ -3,3 +3,6 @@
 
 .part4 #popBox{display:none; padding:20px; border-radius: 10px; color:#fff; text-align: center; background:#f0aa01;}
 .part4 #popBox button{float: right;}
+
+.part5 #popBox{display:none; padding:20px; border-radius: 10px; color:#fff; text-align: center; background:#f0aa01;}
+.part5 #popBox #close{float: right;}
