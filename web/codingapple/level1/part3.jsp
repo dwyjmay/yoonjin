@@ -9,13 +9,17 @@
     <c:import url="/include/head.jsp" />
     <link rel="stylesheet" href="contents.css">
 </head>
-<body class="part2">
-<div class="alertBox" id="alertBox">알림창<a href="javascript:;" onclick="document.getElementById('alertBox').style.display='none';">X</a></div>
+<body class="part3">
+<div class="alertBox" id="alertBox">알림창<a href="javascript:;" onclick="closeBox();">X</a></div>
 <button onclick="openBox();">버튼</button>
 
 <script>
     function openBox(){
         document.getElementById('alertBox').style.display='block';
+    }
+
+    function closeBox() {
+        document.getElementById('alertBox').style.display = 'none';
     }
 </script>
 
