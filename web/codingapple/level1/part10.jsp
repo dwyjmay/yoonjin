@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: efusioni
   Date: 2022-04-26
-  Time: 오후 4:41
+  Time: 오후 5:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -50,12 +50,11 @@
                 <input type="text" class="form-control" id="inp1">
             </div>
             <div class="my-3">
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" id="inp2">
             </div>
             <button type="submit" class="btn btn-primary">전송</button>
             <button type="button" class="btn btn-danger" id="close">닫기</button>
         </form>
-
         <%--
         <form>안의 <button>의 전송버튼의 type = submit, 그 외에는 type=button
         <form>을 쓰면 서버로 유저의 정보를 전송할 수 있음  <form action ="전송할 url">
@@ -70,31 +69,34 @@
     document.querySelector('#close').addEventListener('click',function(){
         document.querySelector('.black-bg').classList.remove('show');
     })
-
-/*    $('.btn-primary').on('click',function(){
-        if($('.form-control').val()===""){
-            alert('empty');
-            return false;
-        }
-
-    })*/
-
-/*    document.querySelector('.btn-primary').addEventListener('click',function(){
-        if(document.querySelectorAll('.form-control')[0].value===""){
-            alert('empty');
-            return false
-        }
-    })*/
-
     document.getElementById('formBox').addEventListener('submit',function(e){
         if(document.getElementById('inp1').value===''){
-
             alert('아이디를 입력하세요');
-            e.preventDefault(); /* 폼 전송 막기! */
+            e.preventDefault();
+        } else if(document.getElementById('inp2').value===''){
+            alert('비밀번호를 입력하세요');
+            e.preventDefault();
+        } else if(document.getElementById('inp2').value.length<6){
+            alert('비밀번호를 6자 이상으로 설정해주세요');
+            e.preventDefault();
         }
     })
 </script>
-
 </body>
 </html>
 
+<%--
+<script>
+    if(1==3){
+        console.log('맞아여');
+    }else if(3==3){
+        console.log('맞습니다')
+    }else{
+
+    }
+
+    /*
+    * if문이 참 -> else if나 else 더 검사 하지 않음
+    * if문이 거짓 -> 그 다음의 else if나 else 검사
+    * */
+</script>--%>
