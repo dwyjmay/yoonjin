@@ -19,7 +19,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body class="part6">
+<body class="part7">
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <span class="navbar-brand">Navbar</span>
@@ -37,36 +37,39 @@
     <li class="list-group-item">And a fifth one</li>
 </ul>
 
+<p class="hello">안녕</p>
+<p class="hello">안녕</p>
+<p class="hello">안녕</p>
+<button id="testBtn">버튼</button>
 
 <script>
-    /*
-    * classList.add()  → 클래스 추가
-    * classList.toggle() -> 클래스 있으면 없애고 , 없으면 생성
-    * */
+    /* 자바스크립트 */
+    //document.querySelector('.hello').innerHTML='바보';
+    //document.querySelector('.hello').style.fontSize='24px';
+    // document.querySelector('.hello').classList.add('test1');
+     /*document.querySelectorAll('.hello')[0].innerHTML='바보';
+     document.querySelectorAll('.hello')[1].innerHTML='바보';
+     document.querySelectorAll('.hello')[2].innerHTML='바보';*/
 
-    document.getElementsByClassName('navbar-toggler')[0].addEventListener('click',function(){
-        document.getElementsByClassName('list-group')[0].classList.toggle('show');
+    /* jquery */
+
+    $('.hello').css('fontSize','24px');
+    $('.hello').addClass('test2');
+    //removeClass() , toggleClass()
+
+    $('.hello').html('바보');
+    $('#testBtn').on('click',function(){
+        $('.hello').slideUp(300);
     })
 
     /*
-    querySelector
-    document.querySelector('#test1')                    //편리하지만 맨 위에 나오는 한 개만 찾아준다,
-    document.querySelector('.list-group-item')          //클래스list-group-item 중 가장 위에 나오는 애 선택
-    document.querySelectorAll(('.list-group-item')[1]   //인덱싱 필요
+    * $(셀렉터)로 찾으면 jquery함수만 붙일 수 있다.
+    * querySelector(셀렉터)로 찾으면 자바스크립트 함수만 붙일 수 있다.
     */
 </script>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-<%--
-Bootstrap 라이브러리
-
-https://getbootstrap.com/docs/5.1/getting-started/introduction/
-
-css와 js 넣기
-
---%>
