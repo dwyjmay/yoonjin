@@ -15,6 +15,6 @@
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
 <script type="text/javascript" src="/js/imagesloaded.pkgd.js"></script><%-- 이미지 로드된 후 작업 --%>
-<script type="text/javascript" src="/js/jquery.rwdImageMaps.min.js"></script><%-- --%>
-<script type="text/javascript" src="/js/imageMapResizer.min.js"></script>
+<script type="text/javascript" src="/js/jquery.rwdImageMaps.min.js"></script><%-- 반응형 map--%>
+<script type="text/javascript" src="/js/imageMapResizer.min.js"></script><%-- 반응형 map--%>
 <script type="text/javascript" src="/js/common.js"></script>
