@@ -1,5 +1,7 @@
 @import 'default.css';
 @import 'font.css';
+@import 'default.css';
+@import 'font.css';
 img {
   max-width: 100%;
 }
@@ -80,4 +82,27 @@ input.radioTypeA:checked + label:after {
   border-color: #28324E;
 }
 
-/*# sourceMappingURL=common.css.map */
+/* checkAll.jsp */
+#checkAllBody {
+  padding: 0 20px;
+}
+#checkAllBody .termsTxt {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+#checkAllBody .termList {
+  width: 400px;
+  border: 1px solid #3c3c3c;
+  padding: 30px;
+}
+#checkAllBody .termList li {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+#checkAllBody .termList li:last-child {
+  margin-botom: 0;
+}
+
+/*# sourceMappingURL=contents.css.map */
