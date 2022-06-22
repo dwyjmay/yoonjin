@@ -1,0 +1,37 @@
+$pintC:red;
+$blue:#28324e;
+$black:#111;
+$bold:700;
+$svgCss:no-repeat 0 0 / 100%;
+$ns:'Noto Sans',sans-serif;
+$nsk:'Noto Sans KR', sans-serif;
+$gd:'Gotham', sans-serif;
+
+@mixin last($target){
+  &:last-of-type{
+    margin-#{$target}:0; padding-#{$target}:0;
+    &::after,&::before{display:none;}
+  }
+}
+@mixin clear{
+  &:after{content:''; display:block; clear:both;}
+}
+@mixin layoutW{
+  width:1280px; margin:0 auto; min-width:1280px;
+  @content;
+}
+@mixin content($obj){
+  &{
+    position:relative;
+    &:#{$obj}{content:''; position:absolute; @content;}
+  }
+}
+@mixin center($position){
+  @if($position == x){
+    left: 50%; transform: translateX(-50%);
+  }@else if($position == y){
+    top: 50%; transform: translateY(-50%);
+  }@else{
+    left: 50%; top:50%; transform: translate(-50%,-50%);
+  }
+}
