@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
+    <link rel="stylesheet" type="text/css" href="/css/contents.css">
+    <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+    <style>
+        /*스크롤바 css
+        https://minineko.tistory.com/entry/CSS-scrollbar-IE-Chrome-Safari-%EC%8A%A4%ED%81%AC%EB%A1%A4%EB%B0%94-%EC%9D%B5%EC%8A%A4-%ED%81%AC%EB%A1%AC-%EC%82%AC%ED%8C%8C%EB%A6%AC
+        */
+        .box{max-height:100px; overflow-y:scroll; width:200px;}
+        li{list-style: none; padding:10px 0; border-bottom: 2px solid #bfbfbf;}
+
+        /* ie*/
+        html{scrollbar-arrow-color:#fff; /* 화살표 색 지정*/
+
+            scrollbar-3dlight-color:#aaa; /*3D 경계*/
+
+            scrollbar-darkshadow-color:red; /* 어두운 그림자*/
+
+            scrollbar-face-color:#fa7b78; /* 스크롤위치 색 지정 */
+            scrollbar-shadow-color:#fa7b78; /* 그림자 (테두리)*/
+
+            scrollbar-hightlight-color:red; /*선택*/
+
+
+            scrollbar-track-color:#fabd34;} /*트랙 색*/
+
+        .box::-webkit-scrollbar{width:10px; background:aliceblue;
+        }
+        .box::-webkit-scrollbar-thumb{background: #5e5448; opacity: .2; border-radius: 5px;
+        }
+        .box::-webkit-scrollbar-track{ background: none;}
+    </style>
+</head>
+<body>
+
+<ul class="box">
+    <li>상품1</li>
+    <li>상품2</li>
+    <li>상품3</li>
+    <li>상품4</li>
+    <li>상품5</li>
+    <li>상품6</li>
+</ul>
+
+
+</body>
+</html>

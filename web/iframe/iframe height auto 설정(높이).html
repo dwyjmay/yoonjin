@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript"> 
+//<![CDATA[
+function calcHeight(){
+ //find the height of the internal page
+
+ var the_height=
+ document.getElementById('the_iframe').contentWindow.
+ document.body.scrollHeight;
+
+ //change the height of the iframe
+ document.getElementById('the_iframe').height=the_height;
+
+ //document.getElementById('the_iframe').scrolling = "no";
+ document.getElementById('the_iframe').style.overflow = "hidden";
+}
+//
+</script>
+
+   <!-- 
+   https://blog.naver.com/PostView.nhn?blogId=sajacr&logNo=221021059931&parentCategoryNo=&categoryNo=25&viewDate=&isShowPopularPosts=true&from=search
+   
+   아이프레임에 onload와 id로 불러온다.
+최소 높이(min-height)도 설정
+[출처] 아이프레임 iframe height 높이 자동조절 방법|작성자 정프로
+   -->
+</head>
+
+<body>
+  <iframe src="https://www.youtube.com/embed/gjFUys3BU0U" id="the_iframe" onload="calcHeight();" name="WrittenPublic" title="게시판뷰" frameborder="0" scrolling="no" style="overflow-x:hidden; overflow:auto; width:100%; min-height:500px;"></iframe>
+
+
+
+</body>
+
+</html>

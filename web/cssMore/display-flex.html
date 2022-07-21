@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../../api/js/jquery-1.12.3.min.js"></script>
+    <style>
+        *{}
+        li{list-style: none;}
+        
+        .flex1{display:flex; flex-direction: row; width:300px;}
+        .flex1_1{flex-wrap: nowrap;}  /* default; flex-container의 영역 내에서 벗어나더라도 강제로 한 줄에 배치 */
+        .flex1_2{flex-wrap: wrap;} /* flex-container의 여역 내에서 벗어나지 않고 여러 행으로 나누어 표현*/
+        
+        .content1{height:150px; color:#fff; text-align: center; display: flex; flex-wrap: nowrap;}
+        .content1 div{}
+        
+        .flexbox{display:flex; flex-wrap: nowrap; gap:0; padding:10px; background:#e8e8e8; width:800px;}
+        .item{min-height:150px; width:100px;}
+        .item:nth-child(1){flex-grow: 2;}
+        
+        
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+        
+        <!--<ul class="flex1 flex1_1">
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+        </ul>-->
+         
+       <!-- <ul class="flex1 flex1_2">
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+            <li><img src="../../images/bell2.jpg" alt=""></li>
+        </ul>-->
+        
+       <!-- <div class="content1">
+            <div class="red"><img src="../../images/bell2.jpg" alt=""></div>
+            <div class="green"><img src="../../images/bell2.jpg" alt=""></div>
+            <div class="blue"><img src="../../images/bell2.jpg" alt=""></div>
+        </div>-->
+        
+        <div class="layout">
+            <div class="flexbox">
+                <div class="item">content1</div>
+                <div class="item">content2</div>
+                <div class="item">content3</div>
+                <div class="item">content4</div>
+            </div>
+        </div>
+        
+        
+         
+</div>
+
+</body>
+
+</html>

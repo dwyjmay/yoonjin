@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
+    <link rel="stylesheet" type="text/css" href="/css/contents.css">
+    <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+    <style>
+        /*스크롤바만 없애고 스크롤 기능은 유지!*/
+        .box{max-height:100px; overflow-y:scroll; width:200px;}
+        .box{ -ms-overflow-style:none;                    /*ie에서 스크롤바 감춤*/}
+        .box::-webkit-scrollbar{display:none!important;    /*크롬 등*/}
+        li{list-style: none; padding:10px 0; border-bottom: 2px solid #bfbfbf;}
+
+    </style>
+</head>
+<body>
+
+<ul class="box">
+    <li>상품1</li>
+    <li>상품2</li>
+    <li>상품3</li>
+    <li>상품4</li>
+    <li>상품5</li>
+    <li>상품6</li>
+</ul>
+
+
+</body>
+</html>

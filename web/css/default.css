@@ -51,6 +51,8 @@ strong, em, h1, h2, h3, h4, h5 {color:#171717;}
 
 .clearfix {*zoom:1;}
 .clearfix:after {content:''; display:block; clear:both;}
+/*.clearfix:before, .clearfix:after {display:block; content: ''; line-height: 0;}
+.clearfix:after {clear: both;}*/
 
 .hideDesc {position:absolute; left:-30000em; top:-30000em; height:1px; width:1px; overflow:hidden; font-size:1px; line-height:1px;}
 
