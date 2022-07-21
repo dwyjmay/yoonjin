@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
+    <link rel="stylesheet" type="text/css" href="/css/contents.css">
+    <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+    <script>
+        /* type 1 */
+        function copyUrl() {
+            var urlAddress = $('#urlAddress');
+            urlAddress.css('display', 'block').select();
+            document.execCommand("Copy");
+            urlAddress.css('display', 'none');
+            alert('URL 주소가 복사 되었습니다');
+            return false;
+        }
+
+
+        /* type 2 */
+
+        function copyUrl2(){
+            var urlbox = document.getElementById( 'textbox-url' );
+            urlbox.select();
+            document.execCommand( 'Copy' );
+            alert( 'URL 이 복사 되었습니다.' );
+        }
+    </script>
+    <style>
+        #textbox-url {position:absolute;top: 0;left:0;width:1px;height:1px;margin: 0;padding:0;border: 0;}
+    </style>
+</head>
+
+<body>
+<!-- type1 -->
+<input type="text" value="https://smartall-dev.wjthinkbig.com/apply/leejj_tvcf/P002003/A2111001/index" id="urlAddress" style="display:none;">  <!-- value =  복사할 내용 -->
+<a href="javascript:;" onclick="copyUrl();">이벤트 공유하기</a>
+
+
+<!-- type2 -->
+<input id="textbox-url"  value = "복사할 내용 입니다."/>
+<a href="javascript:;" onclick="copyUrl2();" id="eventShare">이벤트 공유하기</a>
+</body>
+
+</html>

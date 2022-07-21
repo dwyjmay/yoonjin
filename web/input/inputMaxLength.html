@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../../api/js/jquery-1.12.3.min.js"></script>
+    <script>
+        function maxLengthCheck(object) {
+            if (object.value.length > object.maxLength) {
+                //object.maxLength : 매게변수 오브젝트의 maxlength 속성 값입니다.
+                object.value = object.value.slice(0, object.maxLength);
+            }
+        }
+    </script>
+    <style>
+        dt{display:inline-block;}
+        dd{display: inline-block;}
+        .dib{display: inline-block;}
+        input{border:1px solid #ebebeb; width:100%;}
+    </style>
+
+</head>
+<body>
+<div id="wrapper">
+    <form action="" id="form" method="post">
+        <dl>
+            <dt>주민등록번호</dt>
+            <dd>
+                <p class="ipTxt dib" style="margin-top:5px;width: 40%;">
+                    <input maxlength="6" type="number" name="jumin1" oninput="maxLengthCheck(this)">
+                </p> -
+                <p class="ipTxt dib" style="margin-top:5px;width: 40%;">
+                    <input maxlength="7" type="number" name="jumin2" oninput="maxLengthCheck(this)">
+                </p>
+            </dd>
+        </dl>
+    </form>
+</div>
+</body>
+</html>

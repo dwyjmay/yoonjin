@@ -11,6 +11,7 @@
 <html lang="ko">
 <head>
     <c:import url="/include/head.jsp" />
+    <%-- js/imagesloaded.pkgd.min.js 필수! --%>
     <script>
 
         /* 사용 예시 1 */
