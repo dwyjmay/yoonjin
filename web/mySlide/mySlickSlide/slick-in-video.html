@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+	<script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/slick.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $('.slideArea').slick({
+                dots: true,
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 2000
+            });
+
+            $('.slideArea').on('afterChange', function() {
+                $('.control a').on("click", function() {
+                    $(this).parent().hide();
+                    $('.slick-active .videoWrap video')[0].play();
+
+                });
+            })
+/*
+
+            $('.control a').on("click", function() {
+                $(this).parent().hide();
+                $('.slick-active .videoWrap video')[0].play();
+            });
+*/
+
+        })
+    </script>
+    <style>
+        img{max-width: 100%;}
+        .slideArea{ width:800px; margin:0 auto;}
+        .videoWrap{position: absolute;}
+        .videoWrap video{position: absolute; top: 191px; left:50%; transform: translateX(-50%); width:631px; z-index: 2;}
+        .videoWrap .control{position: absolute; top:191px; left:50%; transform: translateX(-50%);  width:631px; z-index: 3;}
+        .videoWrap .control a{position: absolute; top: 50%; transform: translate(-50%,-50%); left: 50%;}
+    
+    </style>
+</head>
+<body>
+    <div class="slideArea dotsB">
+								<div class="slideSection">
+									<img src="./images/slide3_1.png" alt="">
+								</div>
+								<div class="slideSection">
+									<div class="videoWrap">
+                                        <img src="./images/slide3_2.png" alt="">
+										<video src="./video/facebookAd.mp4" controls></video>
+										<span class="control">
+											<img src="./images/thumb.jpg" alt="">
+											<a href="javascript:;"><img src="./images/btn_play.png" alt="play"></a>
+										</span>
+									</div>
+								</div>
+							</div>
+
+</body>
+
+</html>
