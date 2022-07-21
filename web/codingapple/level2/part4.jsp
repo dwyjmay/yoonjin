@@ -26,43 +26,59 @@
 
 <div class="oh">
     <div class="slide-container">
-        <div class="slide-box"><img src="images/car1.png" alt=""></div>
+        <div class="slide-box on"><img src="images/car1.png" alt=""></div>
         <div class="slide-box"><img src="images/car2.png" alt=""></div>
         <div class="slide-box"><img src="images/car3.png" alt=""></div>
     </div>
 </div>
-<button class="slideBtn" id="btnPrev">다음</button>
+<button class="slideBtn" id="btnPrev">이전</button>
 <button class="slideNum" id="btn-1">1</button>
 <button class="slideNum" id="btn-2">2</button>
 <button class="slideNum" id="btn-3">3</button>
 <button class="slideBtn" id="btnNext">다음</button>
 
 <script>
-    /*document.querySelector('#btn-1').addEventListener('click',function(){
-        document.querySelector('.slide-container').style.transform='translateX(0vw)';
-    })
-    document.querySelector('#btn-2').addEventListener('click',function(){
-        document.querySelector('.slide-container').style.transform='translateX(-100vw)';
-    })
-    document.querySelector('#btn-3').addEventListener('click',function(){
-        document.querySelector('.slide-container').style.transform='translateX(-200vw)';
-    })*/
-
-
     let btn = document.querySelectorAll('.slideNum');
+    /* 슬라이드 동작 */
+    function moveSlide(ele, ind){
+       var tx = (-100)*ind;
+       document.querySelector('.slide-container').style.transform='translateX('+tx+'vw)';
+        document.querySelectorAll('.slide-box').forEach(function(userItem){
+            userItem.classList.remove('on');
+        })
+        document.querySelectorAll('.slide-box')[ind].classList.add('on');
+    }
 
+    /* 숫자버튼으로 이동 */
     btn.forEach(function(item, index){
-        var tx=(-100)*index;
         btn[index].addEventListener('click',function(){
-            document.querySelector('.slide-container').style.transform='translateX('+tx+'vw)';
-            document.querySelectorAll('.slide-box')[index].classList.add('on');
+            moveSlide(this,index);
         })
     })
 
-    document.querySelector('#btnPrev').addEventListener('click',function(){
+    /* 이전버튼 클릭 시 */
+    document.querySelector('#btnNext').addEventListener('click',function(){
+        var elem = document.querySelector('.slide-box.on');
+        var total_n = elem.parentNode.childElementCount;
+        var i =0;
+        while((elem = elem.previousElementSibling) != null){
+            i++
+        }
+        if(i+1 === total_n) i =-1;
+        moveSlide(elem,(i+1));
+    })
 
+    /* 다음버튼 클릭 시 */
+    document.querySelector('#btnPrev').addEventListener('click',function(){
+        var elem = document.querySelector('.slide-box.on');
+        var total_n = elem.parentNode.childElementCount;
+        var i =0;
+        while((elem = elem.previousElementSibling) != null){
+            i++
+        }
+        if(i === 0)i = total_n;
+        moveSlide(elem,(i-1));
     })
 </script>
 </body>
 </html>
-
