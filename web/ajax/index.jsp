@@ -22,6 +22,23 @@
                 }
             })
         })
+
+/*
+        $(function() {
+            $.ajax ({
+                type : "GET",
+                url : "./popup.html",
+                dataType : 'html',
+                beforeSend: function() {
+                },
+                complete: function() {
+                },
+                success : function(data) {
+                    $('.popupLayer').prepend(data);
+                }
+            });
+
+        })*/
     </script>
 </head>
 <body>

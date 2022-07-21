@@ -120,3 +120,19 @@ items 의 너비를  컨텐츠의 너비로  설정하는 방법
 #wrap[role="brand"] .smartallKids .section8 .inSection1 .cont ul{display: flex; flex-flow: column; justify-content: center; align-items: center;}
 	#wrap[role="brand"] .smartallKids .section8 .inSection1 .cont ul li{position:relative; padding-left: 14px;padding-bottom: 10px; font-size: 26px; line-height: 38px;}
 	#wrap[role="brand"] .smartallKids .section8 .inSection1 .cont ul li:before{content: "";display: block; position: absolute; width: 4px; height: 4px; top: 13px; left: 0; background: #222; border-radius: 50%;}
+
+
+
+****-------------------****
+     flex-direction:row;
+     flex-wrap: wrap;
+     flex-flow: row nowrap;
+     justify-content: space-between;
+     align-items:  center;
+     align-content:  ???
+
+          justify-content: space-between; 중심축에서 아이템을 어떻게 배치할 것인가
+    align-items:  center; 반대축에서 아이템을 어떻게 배치할 것인가
+align-content: wrap 으로 해놓고   각각의 덩어리들을 중심축에대해서 어떻게 배치할 것인가
+(.container{flex-wrap: wrap; align-content:flex-end})
+

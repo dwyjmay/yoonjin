@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+    <style>
+        *{margin:0; padding: 0; box-sizing: border-box;}
+        .slideSection{position:relative; margin: 100px 600px; width:1000px; height: 1000px;overflow: hidden;}
+        .slideSection p.active{transform: translateX(0);z-index: 10;}
+        .slideSection p.next{transform: translateX(100%); z-index: 5; }
+        
+        .slideSection p{  transition: 0.5s transform  ease-in-out; position: absolute; transform: translateX(100%);}
+        .slideSection p.prev{transform: translateX(-100%); z-index: 1;}
+        .slideSection p img{width: 100%; height: auto;}
+        
+        .slideSection a:nth-of-type(1){position: absolute; left: 25px; top: 220px; z-index: 20;} 
+        .slideSection a:nth-of-type(2){position: absolute; right: 25px; top: 220px;z-index: 20;}
+    </style>
+    <script>
+    $().ready(function(){
+        var D_slide=$(".slideSection");
+       
+        $("#left").on('click',function(){
+            var D_active=D_slide.find(".active");
+            var D_prev=D_slide.find(".prev");
+            var D_next=D_slide.find(".next");
+            if(D_prev.index()==0){
+                D_slide.find("p").last().addClass("prev");
+            }
+            else{
+                D_prev.prev().addClass("prev");    
+            }
+            D_next.removeClass("next").removeClass("next").addClass("");
+            D_active.removeClass("active").addClass("next");
+            D_prev.removeClass("prev").addClass("active");
+        });
+        $("#right").on('click',function(){
+            var D_active=D_slide.find(".active");
+            var D_prev=D_slide.find(".prev");
+            var D_next=D_slide.find(".next");
+            var N_p=D_slide.find("p").length-1;
+            if(D_next.index()==N_p){
+                D_slide.find("p").first().addClass("next");
+            }
+            else{
+                D_next.next().addClass("next");    
+            }
+            D_next.removeClass("next").removeClass("next").addClass("active");
+            D_active.removeClass("active").addClass("prev");
+            D_prev.removeClass("prev").removeClass("prev").addClass("");
+        });
+    });
+    </script>
+</head>
+<body>
+   <div class="slideSection">
+      <div class="slideCont">
+       <p class="active"><img src="images/apply_landing7_1.jpg" alt="진단검사"></p>
+       <p class="next"><img src="images/apply_landing7_2.jpg" alt="글로벌의사소통"></p>
+       <p class=""><img src="images/apply_landing7_3.jpg" alt="파란색"></p>
+       <p class=""><img src="images/apply_landing3_1_2.jpg" alt="주황"></p>
+       <p class=""><img src="images/apply_landing3_1_3.jpg" alt="패드"></p>
+       <p class="prev"><img src="images/apply_landing3_1_1.jpg" alt="패드두개"></p>
+       </div>
+       <a id="left" href="javascript:;"><img src="images/apply_free_prevBtn.png" alt="left"></a>
+       <a id="right" href="javascript:;"><img src="images/apply_free_nextBtn.png" alt="right"></a>
+   </div>
+    
+</body>
+</html>

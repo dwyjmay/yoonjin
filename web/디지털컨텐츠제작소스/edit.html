@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>디지털 컨텐츠 제작</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/content.css" type="text/css">
+    <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="static/js/efusioni.js"></script>
+    <script type="text/javascript" src="static/js/common.js"></script>
+    <script type="text/javascript" src="static/js/slick.js"></script>
+    <script type="text/javascript" src="static/js/ui.js"></script>
+    <link rel="stylesheet" href="static/css/redmond/jquery-ui-1.8.21.custom.css" type="text/css">
+    <script type="text/javascript" src="static/js/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="static/js/jquery.ui.datepicker.js"></script>
+    <script>
+        $(function(){
+            $(window).on('load',function(){
+                inpActive();
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="wrapper" role="newRegister">
+    <div id="header">
+        <div id="headerWrap">
+            <h1><a href="/index"><img src="static/images/common/logo.png" alt="lg생활건강 로고" /></a></h1>
+        </div>
+    </div>
+    <div id="location">
+        <ul class="dib fr">
+            <li><a href="/index"><img src="static/images/common/ico_home.png" alt="Home"></a></li>
+            <li>디지털컨텐츠 촬영 계획 신청서 입력</li>
+        </ul>
+    </div>
+
+    <div id="container">
+        <div class="containerHead">
+            <h2>디지털컨텐츠 촬영 계획 신청서 입력</h2>
+        </div>
+        <div class="containerBody">
+            <form name="writeForm" id="writeForm">
+                <div class="cont leftArea">
+                    <p class="title">1.담당자</p>
+                    <ul>
+                        <li>
+                            <strong class="subTitle">담당자</strong>
+                            <p class="inputWrap">
+                                <input type="text" id="name" name="name" value="" placeholder="담당자를 조회해주세요." readonly>
+                            </p>
+                        </li>
+                        <li class="ml20">
+                            <strong class="subTitle">담당부서</strong>
+                            <p class="inputWrap">
+                                <input type="text" name=""  readonly="readonly">
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cont cont_2 rightArea">
+                    <p class="title">2.사업부 및 브랜드</p>
+                    <ul>
+                        <li>
+                            <strong class="subTitle">사업부</strong>
+                            <div class="inputWrap">
+                                <select name="dept" id="dept" onchange="getThirdCodeList(this.value, '${deptCode}', 'brand');">
+                                    <option value="">선택해주세요.</option>
+                                    <option value="">선택해주세요.</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="ml20">
+                            <strong class="subTitle">브랜드</strong>
+                            <div class="inputWrap">
+                                <select name="brand" id="brand">
+                                    <option value="">브랜드명을 선택해주세요.</option>
+                                    <option value="">브랜드명을 선택해주세요.</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cont cont_3 leftArea">
+                    <p class="title">3.컨텐츠 유형(영상/사진)</p>
+                    <ul>
+                        <li class="full">
+                            <div class="inputWrap full" style="font-size:12px">
+                                <select name="contentsType" id="contentsType" onchange="getThirdCodeList(this.value, '${kindCode}', 'productType');getThirdCodeListHtml(this.value, '${contentsTypeCode}', 'list', '', '');getThirdCodeListHtml(this.value, '${snsCode}', 'snsList', '', '');">
+                                    <option value="">컨텐츠 유형을 선택해주세요.</option>
+                                    <option value="">컨텐츠 유형을 선택해주세요.</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="full">
+                            <span class="checkTypeA">
+								<input type="checkbox" id="cb1" class="checkTypeA">
+                                <label for="cb1">세로형</label>
+							</span>
+                            <span class="checkTypeA ml20">
+                                <input type="checkbox" id="cb2" class="checkTypeA">
+                                <label for="cb2">가로형</label>
+                            </span>
+                            <span class="checkTypeA ml20">
+                                <input type="checkbox" id="cb3" class="checkTypeA">
+                                <label for="cb3">정방형</label>
+                            </span>
+                            <div class="dib checkTypeA ml20">
+                                <input type="checkbox" id="cb4" class="checkTypeA">
+                                <label for="cb4">기타</label>
+                            </div>
+                            <p class="inputWrap ml2p" style="width:196px;">
+                                <input type="text" name="" placeholder="추가 설명을 입력해주세요." maxlength="100" >
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cont cont_4 rightArea">
+                    <p class="title">4.컨텐츠 종류</p>
+                    <ul>
+                        <li class="full">
+                            <div class="inputWrap full">
+                                <select name="productType" id="productType">
+                                    <option value="">컨텐츠 종류를 선택해주세요.</option>
+                                    <option value="">컨텐츠 종류를 선택해주세요.</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="full">
+                            <p class="inputWrap full">
+                               <input type="text" name="productEtc" id="productEtc" value="xxxx" placeholder="추가 설명을 입력해주세요." maxlength="200">
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cont cont_5 leftArea">
+                    <p class="title">5.제품 출시일</p>
+                    <ul>
+                        <li class="full">
+                            <strong class="subTitle">제품 출시일</strong>
+                            <div class="inputWrap calendar full">
+                                <input type="text" name="releaseDate"  id="releaseDate" value="xxxxx" placeholder="출시일을 입력해주세요.">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cont cont_6 rightArea">
+                    <p class="title">6. 제품명/용량/가격</p>
+                    <ul>
+                        <li class="full">
+                            <strong class="subTitle">제품명</strong>
+                            <div class="inputWrap full">
+                                <input type="text" name="productName" id="productName" placeholder="제품명을 입력해주세요." maxlength="200" value="product_name">
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="subTitle">용량</strong>
+                            <p class="inputWrap">
+                                <input type="text" name="capacity" id="capacity" placeholder="용량을 입력해주세요." value="용량입력">
+                            </p>
+                        </li>
+                        <li class="ml20">
+                            <strong class="subTitle">가격</strong>
+                            <p class="inputWrap">
+                                <input type="text" name="price" id="price" placeholder="가격을 입력해주세요." value="가격입력">
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cont cont_7 leftArea">
+                    <p class="title">7.요청사항</p>
+                    <div class="full">
+                        <textarea placeholder="주요 요청사항을 입력해주세요." onkeyup="checkSize(this,300)"  name="reqTerm" id="reqTerm">ㅎㅎㅎ</textarea>
+                    </div>
+                </div>
+
+                <div class="cont cont_8 rightArea">
+                    <p class="title">8.예산</p>
+                   <div class="full">
+                        <textarea placeholder="영상 및 사진 제작을 위한 추가 예산이 있다면 입력해주세요.&#13;&#10;(모델비, 소품비, 스타일링비, 음원료, 스튜디오 대관료 등에 사용)" onkeyup="checkSize(this,300)" name="budget" id="budget">예산</textarea>
+                    </div>
+                </div>
+
+                <div class="cont contMedia leftArea">
+                    <p class="title">9.활용 매체</p>
+                    <ul>
+                        <li class="full pr">
+                            <div class="inputWrap full">
+                                <select name="" style="width:90%;" onchange="etc(this.value,this)">
+                                    <option value="">컨텐츠 종류를 선택해주세요.</option>
+                                    <option value="etc">기타</option>
+                                </select>
+                                <p class="etcOnly" style="width:90%; display: none;  padding-top: 10px;">
+                                    <input type="text" name="" placeholder="추가 설명을 입력해주세요." >
+                                </p>
+                                <a href="#" class="btnPlus" onclick="addSelect(); return false;"><img src="static/images/common/btn_plus.png" alt="추가"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btnArea">
+                    <a href="/apply/list" class="btnTypeD sizeA">저장</a>
+                    <a href="remove()" class="btnTypeB sizeA">삭제</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    
+    var v;
+    var selectedContentsType = "";
+
+    $(function() {
+        setDatePicker();//달력실행
+
+        $('#name').on('focus',function(){
+            showPopupLayer('/popup/managerPop','',false,'managerPop')
+        })
+        
+        
+    });
+
+    /* .contMedia .plusBtn 클릭 시 */
+    function addSelect() {
+        var str = "<li class='full pr'>";
+        str += "<div class='inputWrap full'>  <select name='' style='width:90%;' onchange='etc(this.value,this)'>";
+        str += "<option value=''>컨텐츠 종류를 선택해주세요.</option>";
+        str += "<option value='etc'>기타</option>";
+        str += " </select> <p class='etcOnly' style='width:90%; display: none;  padding-top: 10px;'>";
+        str += "<input type='text' name='' placeholder='추가 설명을 입력해주세요.' ></p>";
+        str += "<a href='#' class='btnPlus' onclick='addSelect(); return false;'><img src='static/images/common/btn_plus.png' alt='추가'></a></div></li>";
+        $('.contMedia ul').append(str);
+        $('.contMedia .btnPlus').hide();
+        $('.contMedia ul li').last().find('.btnPlus').show();
+    }
+
+    function etc(value,pSelect){
+        if(value=='etc'){
+            $(pSelect).siblings('.etcOnly').show();
+        }else{
+            $(pSelect).siblings('.etcOnly').hide();
+        }
+    }
+
+    function checkSize(textArea,size){
+        if( $(textArea).val().length > size){
+            $(textArea).val($(textArea).val().substring(0, size));
+        }
+    }
+    
+       function remove() {
+        if (confirm("삭제하시겠습니까?")) {
+          
+        }
+    }
+
+    /* 달력 */
+    function setDatePicker() {
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월', '7월','8월','9월','10월','11월','12월'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            dateFormat: 'yy.mm.dd', firstDay: 0,
+            buttonImageOnly: true,
+            buttonImage: 'static/images/desc/ico_calendar_1.png',
+            isRTL: false};
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+
+        $(".calendar input").datepicker({
+            showOn: "button",
+            buttonText:"달력"
+        });
+        $('#ui-datepicker-div').css('z-index', '50');
+    }
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if ((charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))){
+            return false;
+        }
+        // Textbox value
+        var _value = event.srcElement.value;
+        // 소수점(.)이 두번 이상 나오지 못하게
+        var _pattern0 = /^\d*[.]\d*$/; // 현재 value값에 소수점(.) 이 있으면 . 입력불가
+        if (_pattern0.test(_value)) {
+            if (charCode == 46) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function dateFormat(el , evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        var val = el.value;
+        if(charCode >= 48 || charCode <= 57){
+            if(val.length == 4) el.value = el.value.replace(/(\d\d\d\d)/g, '$1.');
+            if(val.length == 7) el.value = el.value.replace(/(\d\d\d\d).(\d\d)/g, '$1.$2.');
+        }
+    }
+</script>
+</body>
+
+</html>

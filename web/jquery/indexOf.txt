@@ -1,0 +1,17 @@
+$(function () {
+		if(location.href.indexOf('?index') !== -1){
+			$('.listBtn').on('click', function (){
+				location.href ='/news/notice/list'
+			});
+		}else{
+			$('.listBtn').on('click', function (){
+				history.back();
+			});
+		}
+	});
+
+
+
+
+/*https://smartall-dev.wjthinkbig.com/news/notice/view/6?page=1*/
+		console.log(location.href.split('page=')[1])
